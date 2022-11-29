@@ -7,7 +7,6 @@ class Emotion():
         
     def getData(self):
         db = sqlite3.connect("./rsc/emotions.db")
-        cursor = db.cursor()
         df = pd.read_sql("SELECT * FROM Word",db)
-
+        db.close()
         return df
